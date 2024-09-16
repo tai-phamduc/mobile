@@ -48,4 +48,19 @@ const oddAvg = Object.values(game.odds).reduce((accumulator, currentValue) => ac
 
 console.log(oddAvg.toFixed(2))
 
+Object.values(game.odds).forEach((team, index) => {
+  game["team" + index] ? console.log(`Odd of victory ${game["team" + index]}: ${team}`) : console.log(`Odd of draw: ${team}`)
+})
+
+let scorer
+for (let scored of game.scored) {
+  if (scorer[scored])
+    scorer[scored]++
+  else
+    scorer[scored] = 1
+}
+console.log(scorer)
+
+
+
 
